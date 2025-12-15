@@ -1,0 +1,209 @@
+﻿Phooko PM                                                                        15/ 12/ 2025
+Intrusion Detection System
+
+
+Computer Networks Project.
+Computer Networks Security.
+________________
+
+
+ABSTRACT
+
+
+Intrusion Detection System is a software or a device that can monitor all the suspicious activities in the network or those activities that violate its policy. IDS is a very popular system to protect the networks from different types of attacks.
+Any intrusion activity or violation is reported or informed either to the administrator or this information can be centrally collected in a system called SIEM (Security Information and Event Management). It collects and combines information from different sources and it uses alarm filtering techniques. There are two most common types of IDS. (NIDS) Network based Intrusion detection system and (HIDS) Host based Intrusion detection system. HIDS is used for monitoring important operating system files and NIDS are used to analyze incoming network traffic. Here’s how IDS work: IDS when placed at a strategic point or points within a network to monitor traffic to and from all devices on the network, an IDS will perform an analysis of passing traffic, and match the traffic that is passed on the subnets to the library of known attacks. Once an attack is identified, or abnormal behaviour is sensed, the alert can be sent to the administrator. Modern networked business environments require a high level of security to ensure safe and trusted communication of information between various organizations. An intrusion detection system acts as an adaptable safeguard technology for system security after traditional technologies fail. Cyber-attacks will only become more sophisticated, so it is important that protection technologies adapt along with their threats.
+________________
+TABLE OF CONTENT
+
+
+List of Figures
+List of Tables
+Glossary
+1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2. Background
+2.1 IDS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11
+2.2 How it is invented? . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . 12
+2.3 Advantages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .12
+2.4 Motivation . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.5 Goals and Specifications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.6 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3. System Design
+3.1 Project Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . .14
+3.1.1 The Research Stage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..  . . .  . . 14
+3.1.2 Project Layout Stage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  .  . . 14
+3.1.3 Network Devices and Connection Stage . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . 16
+3.2 Software and Hardware Requirements . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . 18
+3.2.1 Cisco Packet Tracer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.2.2 Command Line Interface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.3 Project Implementation . . . . . . . . . . . .. . . . . . . ..  . . . . . . . . . . . . . . . . . . . . 20
+3.3.1 Configuring the Network . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . .21
+3.3.2 Testing the Network . . . . . . . . . . . . . . . . .  . . . .. . . . . . . . . . . . . . . . . . . . .22
+3.3.3 Implementation of NIDS using CLI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .22
+3.3.4 Commands for Implementing IDS . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . .23
+3.4 IDS Enabled & Protected Network . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+3.5 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4. Experimental Results and Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . 26
+4.1 Testing NIDS & SYSLOG . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . ..26
+4.2 Discussions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . 27
+4.2.1 Difficulties . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . 27
+4.2.2 Future Work . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . .27
+4.3 Summary . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . 27
+5. Conclusions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . .27
+6. Bibliography . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+
+
+
+
+________________
+
+
+Glossary
+
+
+IDSs which detect attacks by capturing and analyzing network packets.
+CNSSI 4009-2015 under intrusion detection systems (IDS), (network-based) NIST SP 800-36
+Software that automates the intrusion detection process.
+CNSSI 4009-2015 NIST SP 800-94
+DoS is a type of attack which disrupts the services of other machines.
+NIST SP 800-12 Rev. 1 under Intrusion Detection System (IDS) NIST SP 800-94
+A Security service that monitors and analyses network or system events for the purpose of
+finding and providing real-time or near real-time warning of, attempts to access system
+resources in an unauthorized manner.
+NIST SP 800-82 Rev. 2 under Intrusion Detection System (IDS) RFC 4949
+A software application that can be implemented on host operating systems or as network
+devices to monitor activity that is associated with intrusions or insider misuse, or both.
+NIST SP 800-47 under Intrusion Detection System (IDS)
+NIDS IDS which is set up at network level.
+HIDS IDS which is set up at host level.
+IPS is an enhancement of IDS.
+Packet which travels inside the network.
+________________
+
+
+PROJECT
+DESCRIPTION
+
+
+1.Introduction
+An IDS is basically a software or device that is categorised into two common parts
+one is NID i.e. Network Intrusion Detection and second is HID i.e. Host Intrusion
+Detection. The work of both the NID & HID is same but their level is different. But
+IDS are categorised into 5 types – NIDS, HIDS, PIDS, Hybrid IDS & APIDS. Work is
+same to detect intrusions but they are used at different levels.
+
+
+  
+
+Fig 1.1
+In Fig 1.1 you are now clear where HIDSs are used and where NIDSs are used.
+In this project I have implemented Intrusion Detection System by creating 3 different
+networks as in Fig 1.2. Implementing the IDS is very challenging task as it needs the
+implementor to have proper knowledge with prior knowledge with some common and
+special network devices and ethernet cables. One have to know that how to deal with
+the CLI i.e. Command Line Interface. As I am performing this project on Cisco Packet
+Tracer – A best available simulation tool which allows users to see the working of
+network in real time.
+A layout of the network should be made prior to the implementation of IDS as I’m
+implementing NIDS. There are various parameters which are to be kept in mind while
+I designed the network and configured the IDS. Here are some ‘can’s and ‘can not’s about the
+IDS.
+
+
+* CAN recognize and report alterations to data.
+* CAN detect when your system is under attack.
+* CAN detect errors in your system configuration.
+* CAN NOT analyse all the traffic on a busy network.
+* CAN NOT prevent the system from that attack which it detects.
+* CAN NOT deal with some of the modern network hardware and features.
+  
+
+FIG 1.2
+
+
+2.0Background
+2.1 IDS
+By the 1960s, financial systems began to introduce audit practice into their processes to
+inspect data and check for fraud or errors in systems. However, some questions have arisen:
+what should be detected, how to analyse what has been discovered and how to protect the
+various levels of security clearance on the same network without compromising security?
+Between 1984 and 1986, Dorothy Denning and Peter Neumann developed a first model of
+IDS, a prototype named as Intrusion Detection Expert System (IDES).
+
+
+The IDES model is based on the hypothesis that the behaviour pattern of an intruder is
+different enough from a legitimate user to be detected by usage statistics analyses. Therefore, this model tries to create a pattern of behaviour for users in relation to programs, files and devices, both in the short and long term, to make the detection, besides feeding the system based on the rules for representing known violations. By the end of the 1980s, many other systems were developed, based on an approach combining statistical and expert systems.
+However, we must differentiate between IDS and IPS (Intrusion Prevention System). The
+first one is a software that automates the process of intrusion detection; the latter is an
+intrusion prevention software, which aims to prevent possible attacks. One therefore works in a reactive and informative way, while the IPS reduces the risk of compromising an
+environment.
+________________
+
+
+2.2 How is it Invented?
+The IDS journey started thirty years ago when increasing enterprise network access spawned a new challenge: the need for user access and user monitoring. As day-to-day operations grew increasingly dependent upon shared use of information systems, levels of access to these systems and clear visibility into user activity was required to operate safely and securely.
+Much of the initial headway on IDS was made within the U.S. Air Force. In 1980, James P.
+Anderson, a pioneer in information security and member of the Defence Science Board Task
+Force on Computer Security at the U.S. Air Force, produced “Computer Security Threat
+Monitoring and Surveillance,” a report that is often credited with introducing automated IDS.
+Soon after this report was released, the first model was built, born out of the same methods
+used by anti-virus applications: rule-based systems that constantly scanned and compared
+network traffic against a list of known threats.
+
+
+2.3 Advantages
+
+
+* It monitors the working of routers, firewalls, key servers and files. It uses its extensive
+attack signature database, raises an alarm and sends appropriate notifications on
+detecting a breach.
+* By using the signature database, IDS ensures quick and effective detection of known
+anomalies with a low risk of raising false alarms.
+* It analyses different types of attacks, identifies patterns of malicious content and helps the administrators to tune, organize and implement effective controls.
+* It helps the company maintain regulatory compliance and meet security regulations as it provides greater visibility across the entire network.
+
+
+2.4 Motivation
+
+
+When we had all individually registered for this project at the IT Center, none of us were quite sure what and how to implement IDS and what planning should be done to complete this project. But we all knew we wanted to do something interesting and most importantly something fun. We have seen some of the networking projects but all those were of basic level and we somehow knew all the basics of networking and worked under some basic projects so we decided to do some intermediate level. This IDS has many projects including the expert mode where some high level commands are used but if I talk about network security we all were new so we picked from basic IDS security that how it worked and secure the network. Anyone can understand this project. It's easy to understand and it’s fun to implement. Whenever anyone does anything it is important he/she should have a strong motive and encouragement to do that task.
+________________
+
+
+2.5 Goals and Specifications
+
+
+The goal of this project is to design, implement and test a stable and secure IDS that can be
+used to secure any type of network. It also has the ability to immediately inform the
+administration about the intrusion or any suspicious activity. It collects all the different
+protocols and traffic information directly to the admin of the network and after informing the
+admin the work of the IDS is completed, next admin decides what to do with this traffic,
+whether to continue the traffic or block.
+
+
+The final IDS design after all the configurations it should meet the following specifications:
+
+
+1. The IDS must be capable of detecting the type of traffic which admin assigned to it.
+
+
+2. The IDS must be capable of informing admin about any suspicious activity related to the signatures assigned by the admin.
+
+
+3. The IDS should create a log report in the server which is specifically meant for
+logging these activities.
+
+
+4. The IDS must be capable of scanning the traffic which is entering inside the network.
+
+
+2.6 Summary
+
+
+The aim of this project was to build a security technique to secure a network for malicious
+activity. This project was a great learning opportunity for all of us as we come to know some
+new things which we don’t. There were many difficulties for us during the whole process but
+We didn't lose hope and tried to complete this as soon as possible. In 2.0 Section you read
+about the IDS, its History and Advantages of having it in the network.
+
+
+3.0 System Design
